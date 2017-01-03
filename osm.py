@@ -42,7 +42,7 @@ for line in fr:
     count = count + 1
     l = json.loads(line)
     if l["osm_id"] and l["osm_type"]:
-        r = requests.get('https://jzvqzn73ca.execute-api.us-east-1.amazonaws.com/api/feature/'+l["osm_type"]+'/'+l["osm_id"], verify=False)
+        r = requests.get('https://jzvqzn73ca.execute-api.us-east-1.amazonaws.com/api/feature/'+l["osm_type"]+'/'+l["osm_id"], verify=True)
         response = r.json()
         if 'properties' in response:
             if 'wikidata' in response["properties"] or 'wikipedia' in response["properties"]:
